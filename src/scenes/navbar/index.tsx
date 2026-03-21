@@ -19,13 +19,14 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6 bg-blue`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
-          <div className={`${flexBetween} w-full gap-16`}>
+          <div className={`${flexBetween} w-full`}>
             {/* LEFT SIDE */}
             <a className= "text-3xl font-bold"
               href="/"
-              onClick={() => setSelectedSection('home')}
-            >
-              <span className="font-cursive block text-2xl -mb-2">The marriage of</span>
+              onClick={() => setSelectedSection('home')}>
+              <span className="font-cursive block text-2xl -mb-2">
+                The marriage of
+              </span>
                 JESSICA & JAMES
             </a>
             {/* RIGHT SIDE */}

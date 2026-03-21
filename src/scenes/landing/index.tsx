@@ -35,7 +35,7 @@ const LandingPage = ({ onEnter }: LandingPageProps) => {
       {/* Text that writes across */}
       {displayedText && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
-          <span className={`${isAboveMediumScreens ? 'text-7xl' : 'text-5xl'} md:text-9xl text-black font-cursive transform whitespace-nowrap mb-20`}>
+          <span className={`${isAboveMediumScreens ? 'text-7xl' : 'text-5xl'} md:text-9xl text-black font-cursive transform whitespace-nowrap mb-[128px]`}>
             {displayedText}
           </span>
         </div>
@@ -51,8 +51,6 @@ const LandingPage = ({ onEnter }: LandingPageProps) => {
             JESSICA & JAMES
         </h1>
         </div>
-        
-        {/* Below centre image text */}
 
       </div>
     </div>

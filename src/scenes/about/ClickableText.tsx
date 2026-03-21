@@ -6,10 +6,11 @@ type ClickableTextProps = {
   href?: string;
   onClick?: () => void;
   tooltip?: string;
+  isAboveMediumScreens?: boolean;
   className?: string;
 }
 
-const ClickableText = ({ text, href, onClick, tooltip, className}: ClickableTextProps) => {
+const ClickableText = ({ text, href, onClick, tooltip, className, isAboveMediumScreens }: ClickableTextProps) => {
   const clickButtonText = "text-text-primary text-3xl font-bold transition-all duration-300 hover:scale-90 inline-block cursor-pointer hover:opacity-100";
   const [showTooltip, setShowTooltip] = useState(false);
   const bubbleColour = text.toLowerCase() === 'rsvp' ? 'bg-green' :
@@ -23,7 +24,7 @@ const ClickableText = ({ text, href, onClick, tooltip, className}: ClickableText
     onMouseLeave={() => setShowTooltip(false)}
   >
       {/* Tooltip Bubble with Framer Motion */}
-      {tooltip && showTooltip && (
+      {tooltip && showTooltip && isAboveMediumScreens && (
         <motion.div
           style={{
             width: 240,

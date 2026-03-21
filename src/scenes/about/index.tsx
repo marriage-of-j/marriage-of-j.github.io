@@ -19,12 +19,17 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
     element?.scrollIntoView({ behavior: 'smooth' });
   };
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const [showHint, setShowHint] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isWiggling, setIsWiggling] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowHint(true), 2000);
+    const timer = setTimeout(() => {
+      setIsWiggling(true);
+      setTimeout(() => setIsWiggling(false), 1500); // matches wiggle duration
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
+
 
   return (
     <div className="min-h-screen">
@@ -37,7 +42,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       <div id="home" className="min-h-screen flex items-center justify-center bg-blue">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24`}>
           <div className="text-center mb-16">
-            <h1 className={`${isAboveMediumScreens ? 'text-9xl' : 'text-7xl'} font-bold text-text-primary mb-1`}>5th June 2027</h1>
+            <h1 className={`${isAboveMediumScreens ? 'text-9xl' : 'text-7xl'} font-sans font-bold text-text-primary mb-1`}>5th June 2027</h1>
           </div>
 
           <motion.div 
@@ -50,14 +55,15 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
               visible: { opacity: 1, x: 0 },
             }}
           >
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <ClickableText
               text="RSVP"
               onClick={() => scrollToSection('rsvp')}
               tooltip="répondez s'il vous plaît"
-              className={showHint ? 'animate-wiggle' : ''}
+              className={isWiggling && !isHovered ? 'animate-wiggle' : ''}
+              isAboveMediumScreens={isAboveMediumScreens}
             />
-            {isAboveMediumScreens && showHint && (
+            {/* {isAboveMediumScreens && showHint && (
               <motion.span
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -65,22 +71,25 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
               >
                 Please respond!
               </motion.span>
-            )}
+            )} */}
           </div>
             <ClickableText 
               text="SCHEDULE" 
               onClick={() => scrollToSection('schedule')}
               tooltip="what is happening & when"
+              isAboveMediumScreens={isAboveMediumScreens}
             />
             <ClickableText 
               text="TRAVEL&STAY" 
               onClick={() => scrollToSection('travel&stay')}
               tooltip="information on travel and nearby accommodation"
+              isAboveMediumScreens={isAboveMediumScreens}
             />
             <ClickableText 
               text="CONTACT" 
               onClick={() => scrollToSection('contact')}
               tooltip="Jessica: +447415340240 James: +447964002282"
+              isAboveMediumScreens={isAboveMediumScreens}
             />
           </motion.div>
         </div>
