@@ -91,7 +91,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
      {/* RSVP Section */}
       <div id="rsvp" className="min-h-screen bg-green flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
-          <h2 className="text-6xl font-bold text-text-primary mb-8">RSVP</h2>
+                <h2 className={`${isAboveMediumScreens ? 'text-6xl' : 'text-5xl'}  font-bold text-text-primary mb-8`}>RSVP</h2>
             <iframe
             src="https://docs.google.com/forms/d/e/1FAIpQLSfmIDWTEt7DMi2eAOBTYJ8Amx61cm9Qpsr8gnFgFD3JvFcdbQ/viewform?usp=dialog"
             width="100%"
@@ -105,7 +105,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       {/* SCHEDULE Section */}
       <div id="schedule" className="min-h-screen bg-plum flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
-          <h2 className="text-6xl font-bold text-text-primary mb-8">ON THE DAY</h2>
+          <h2 className={`${isAboveMediumScreens ? 'text-6xl' : 'text-5xl'}  font-bold text-text-primary mb-8`}>ON THE DAY</h2>
           <p className="text-2xl text-text-primary">
             ARRIVE 2PM
             <br /><br />
@@ -120,7 +120,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       {/* TRAVEL&STAY Section */}
       <div id="travel&stay" className="min-h-screen bg-pink flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
-          <h2 className="text-6xl font-bold text-text-primary mb-8">TRAVEL & STAY</h2>
+          <h2 className={`${isAboveMediumScreens ? 'text-6xl' : 'text-5xl'}  font-bold text-text-primary mb-8`}>TRAVEL & STAY</h2>
           <p className="text-xl text-text-primary">
             INFORMATION ON TRAVEL AND NEARBY ACCOMMODATION. THIS IS JUST A PLACEHOLDER FOR NOW
           <br /><br />
@@ -133,7 +133,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       {/* CONTACT Section */}
       <div id="contact" className="min-h-screen bg-yellow flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
-          <h2 className="text-6xl font-bold text-text-primary mb-8">CONTACT</h2>
+          <h2 className={`${isAboveMediumScreens ? 'text-6xl' : 'text-5xl'}  font-bold text-text-primary mb-8`}>CONTACT</h2>
           <p className="text-xl text-text-primary">
             JESSICA
             <br />
