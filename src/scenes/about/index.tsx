@@ -1,5 +1,5 @@
 import Navbar from "@/scenes/navbar";
-import ClickableText from '@/components/ClickableText';
+import ClickableText from '@/components/clickableText';
 import { motion } from 'framer-motion';
 import type { SectionType } from '@/shared/types';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
@@ -43,7 +43,8 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       <div id="home" className="min-h-screen flex items-center justify-center bg-blue">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24`}>
           <div className="text-center mb-16">
-            <h1 className={`${isAboveMediumScreens ? 'text-9xl' : 'text-7xl'} font-sans font-bold text-text-primary mb-1`}>5th June 2027</h1>
+            <h1 className={`${isAboveMediumScreens ? 'text-9xl' : 'text-5xl'} font-sans font-bold text-text-primary mb-1`}>
+              5th June 2027</h1>
           </div>
 
           <motion.div 
@@ -133,7 +134,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
       <div id="contact" className="min-h-screen bg-yellow flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
           <h2 className="text-6xl font-bold text-text-primary mb-8">CONTACT</h2>
-          <p className="text-2xl text-text-primary">
+          <p className="text-xl text-text-primary">
             JESSICA
             <br />
             +447415340240

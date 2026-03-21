@@ -21,7 +21,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
         <div className={`${flexBetween} mx-auto w-5/6`}>
           <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
-            <a className= "text-3xl font-bold whitespace-nowrap"
+            <a className= {`${isAboveMediumScreens ? 'text-3xl' : 'text-2xl'} font-bold whitespace-nowrap`}
               href="/"
               onClick={() => setSelectedSection('home')}>
               <span className="font-cursive block text-2xl -mb-2">
