@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import type { SectionType } from '@/shared/types';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
 import useMediaQuery from '@/hooks/useMediaQuery';
+import { useEffect, useState } from "react";
+import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   onBack: () => void;
@@ -17,7 +19,12 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
     element?.scrollIntoView({ behavior: 'smooth' });
   };
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [showHint, setShowHint] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setShowHint(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="min-h-screen">
@@ -43,11 +50,18 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
               visible: { opacity: 1, x: 0 },
             }}
           >
-            <ClickableText 
-              text="RSVP" 
+            <ClickableText
+              text="RSVP"
               onClick={() => scrollToSection('rsvp')}
               tooltip="répondez s'il vous plaît"
+              className={showHint ? 'animate-wiggle' : ''}
             />
+            {showHint && (
+              <div className="absolute -bottom-8 -left-4 flex items-center gap-2 animate-bounce-in pointer-events-none z-50 transform -translate-x-full">
+                <span className="text-sm font-sans italic text-text-primary whitespace-nowrap">Please respond!</span>
+              </div>
+            )}
+
             <ClickableText 
               text="SCHEDULE" 
               onClick={() => scrollToSection('schedule')}
@@ -60,8 +74,8 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
             />
             <ClickableText 
               text="CONTACT" 
-              onClick={() => scrollToSection('travel&stay')}
-              tooltip="link to jess's email or her number is 07415340240"
+              onClick={() => scrollToSection('contact')}
+              tooltip="Jessica: +447415340240 James: +447964002282"
             />
           </motion.div>
         </div>
@@ -107,8 +121,29 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
         </div>
       </div>
 
+
+      {/* CONTACT Section */}
+      <div id="contact" className="min-h-screen bg-yellow flex items-center">
+        <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
+          <h2 className="text-6xl font-bold text-text-primary mb-8">CONTACT</h2>
+          <p className="text-2xl text-text-primary">
+            JESSICA
+            <br />
+            +447415340240
+            <br />
+            jess.m.shields@live.co.uk
+            <br /><br />
+            JAMES
+            <br />
+            +447964002282
+            <br />
+            jamesgeorgelay@gmail.com
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
+
 
 export default IntroPage
