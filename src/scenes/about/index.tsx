@@ -1,5 +1,5 @@
 import Navbar from "@/scenes/navbar";
-import ClickableText from '@/scenes/about/ClickableText';
+import ClickableText from '@/components/ClickableText';
 import { motion } from 'framer-motion';
 import type { SectionType } from '@/shared/types';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
@@ -64,15 +64,6 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
               className={isWiggling && !isHovered ? 'animate-wiggle' : ''}
               isAboveMediumScreens={isAboveMediumScreens}
             />
-            {/* {isAboveMediumScreens && showHint && (
-              <motion.span
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="absolute -bottom-8 left-0 text-sm font-sans italic text-text-primary whitespace-nowrap pointer-events-none z-50"
-              >
-                Please respond!
-              </motion.span>
-            )} */}
           </div>
             <ClickableText 
               text="SCHEDULE" 
@@ -96,7 +87,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
         </div>
       </div>
 
-  {/* RSVP Section */}
+     {/* RSVP Section */}
       <div id="rsvp" className="min-h-screen bg-green flex items-center">
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
           <h2 className="text-6xl font-bold text-text-primary mb-8">RSVP</h2>
@@ -123,6 +114,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
             </p>
         </div>
       </div>
+
 
       {/* TRAVEL&STAY Section */}
       <div id="travel&stay" className="min-h-screen bg-pink flex items-center">
