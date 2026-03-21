@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { HeartIcon } from '@heroicons/react/24/outline';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import Petals from '@/components/petals';
 

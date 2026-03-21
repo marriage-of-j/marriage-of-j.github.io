@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import type { SectionType } from '@/shared/types';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
 import useMediaQuery from '@/hooks/useMediaQuery';
-import Petals from "@/components/petals";
 
 type Props = {
   onBack: () => void;

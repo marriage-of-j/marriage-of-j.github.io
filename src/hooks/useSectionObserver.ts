@@ -9,9 +9,9 @@ export const useSectionObserver = ({ setSelectedSection }: Props) => {
   useEffect(() => {
     const sectionIds: SectionType[] = [
       "home",
-      "about",
-      "portfolio",
-      "projects",
+      "rsvp",
+      "schedule",
+      "travel&stay",
     ];
 
     const elements = sectionIds
