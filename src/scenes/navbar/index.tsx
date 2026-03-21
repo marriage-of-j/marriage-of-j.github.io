@@ -49,9 +49,11 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
                   selectedSection={selectedSection} 
                   setSelectedSection={setSelectedSection} 
                 />
-                <a href="mailto:jess.m.shields@live.co.uk" className=" transition duration-300 hover:text-text-primary">
-                  <span>CONTACT</span>  
-                </a>
+                <Link 
+                    page="CONTACT" 
+                  selectedSection={selectedSection} 
+                  setSelectedSection={setSelectedSection} 
+                />
               </div>
             </div>
             ) : (
@@ -77,7 +79,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
           </div>
 
           {/* MENU ITEMS */}
-          <div onClick={() => setIsMenuToggled(false)} className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
             <Link
               page="home"
               selectedSection={selectedSection}

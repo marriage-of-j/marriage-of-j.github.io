@@ -5,7 +5,7 @@ import type { SectionType } from '@/shared/types';
 import { useSectionObserver } from '@/hooks/useSectionObserver';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { useEffect, useState } from "react";
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
+// import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   onBack: () => void;
@@ -131,13 +131,18 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
             <br />
             +447415340240
             <br />
+            <a href="mailto:jess.m.shields@live.co.uk" className=" transition duration-300 hover:text-text-primary">
             jess.m.shields@live.co.uk
+            </a>
             <br /><br />
             JAMES
             <br />
             +447964002282
             <br />
+            <a href="mailto:jamesgeorgelay@gmail.com" className=" transition duration-300 hover:text-text-primary">
             jamesgeorgelay@gmail.com
+            </a>
+            
           </p>
         </div>
       </div>
