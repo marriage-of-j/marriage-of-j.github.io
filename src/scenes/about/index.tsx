@@ -50,18 +50,23 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
               visible: { opacity: 1, x: 0 },
             }}
           >
+          <div className="relative flex items-center justify-center">
             <ClickableText
               text="RSVP"
               onClick={() => scrollToSection('rsvp')}
               tooltip="répondez s'il vous plaît"
               className={showHint ? 'animate-wiggle' : ''}
             />
-            {showHint && (
-              <div className="absolute -bottom-8 -left-4 flex items-center gap-2 animate-bounce-in pointer-events-none z-50 transform -translate-x-full">
-                <span className="text-sm font-sans italic text-text-primary whitespace-nowrap">Please respond!</span>
-              </div>
+            {isAboveMediumScreens && showHint && (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="absolute -bottom-8 left-0 text-sm font-sans italic text-text-primary whitespace-nowrap pointer-events-none z-50"
+              >
+                Please respond!
+              </motion.span>
             )}
-
+          </div>
             <ClickableText 
               text="SCHEDULE" 
               onClick={() => scrollToSection('schedule')}
