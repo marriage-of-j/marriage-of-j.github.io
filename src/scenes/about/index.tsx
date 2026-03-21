@@ -34,8 +34,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
           </div>
 
           <motion.div 
-            className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-lg'} mb-8 mx-auto px-6 flex flex-wrap justify-between`}
-            initial="hidden"
+            className={`${isAboveMediumScreens ? 'max-w-6xl flex-row justify-between' : 'max-w-2xl flex-col'} mb-8 mx-auto px-6 flex flex-wrap`}            initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5 }}

@@ -59,7 +59,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
                 className="rounded-full bg-secondary-500 p-2"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
-                <Bars3Icon className="h-6 w-6 text-white" />
+                <Bars3Icon className="h-6 w-6 text-black" />
               </button>
             )}
           </div>
@@ -68,7 +68,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
 
             {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-blue drop-shadow-xl">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-full bg-blue">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -77,7 +77,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
           </div>
 
           {/* MENU ITEMS */}
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <div onClick={() => setIsMenuToggled(false)} className="ml-[33%] flex flex-col gap-10 text-2xl">
             <Link
               page="home"
               selectedSection={selectedSection}
