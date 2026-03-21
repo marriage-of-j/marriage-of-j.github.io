@@ -19,9 +19,9 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
     <nav>
       <div className={`${flexBetween} fixed top-0 z-30 w-full py-6 bg-blue`}>
         <div className={`${flexBetween} mx-auto w-5/6`}>
-          <div className={`${flexBetween} w-full`}>
+          <div className={`${flexBetween} w-full gap-16`}>
             {/* LEFT SIDE */}
-            <a className= "text-3xl font-bold"
+            <a className= "text-3xl font-bold whitespace-nowrap"
               href="/"
               onClick={() => setSelectedSection('home')}>
               <span className="font-cursive block text-2xl -mb-2">
@@ -80,28 +80,12 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
           </div>
 
           {/* MENU ITEMS */}
-          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <Link
-              page="home"
-              selectedSection={selectedSection}
-              setSelectedSection={setSelectedSection}
-            />
-            <Link
-              page="rsvp"
-              selectedSection={selectedSection}
-              setSelectedSection={setSelectedSection}
-            />
-            <Link
-              page="schedule"
-              selectedSection={selectedSection}
-              setSelectedSection={setSelectedSection}
-            />
-            <Link
-              page="travel&stay"
-              selectedSection={selectedSection}
-              setSelectedSection={setSelectedSection}
-            />
-          </div>
+        <div onClick={() => setIsMenuToggled(false)} className="flex flex-col gap-10 text-2xl ml-[33%]">
+          <Link page="home" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+          <Link page="rsvp" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+          <Link page="schedule" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+          <Link page="travel&stay" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+        </div>
         </div>
       )}
     </nav>

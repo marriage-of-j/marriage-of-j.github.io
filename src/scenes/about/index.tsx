@@ -33,6 +33,7 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
 
   return (
     <div className="min-h-screen">
+      {/* <CursorHearts /> */}
        <Navbar 
           selectedSection={selectedSection} 
           setSelectedSection={setSelectedSection} 
