@@ -51,7 +51,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
                   setSelectedSection={setSelectedSection} 
                 />
                 <Link 
-                    page="CONTACT" 
+                  page="CONTACT" 
                   selectedSection={selectedSection} 
                   setSelectedSection={setSelectedSection} 
                 />
@@ -71,7 +71,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
 
             {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="fixed right-0 bottom-0 z-40 h-full w-full bg-blue">
+        <div className="fixed right-0 bottom-0 z-40 h-full w-full bg-text-primary">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -85,6 +85,7 @@ const Navbar = ({ selectedSection, setSelectedSection }: Props) => {
           <Link page="rsvp" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
           <Link page="schedule" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
           <Link page="travel&stay" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+          <Link page="contact" selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
         </div>
         </div>
       )}

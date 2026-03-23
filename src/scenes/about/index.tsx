@@ -122,9 +122,9 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
         <div className={`${isAboveMediumScreens ? 'max-w-6xl' : 'max-w-2xl'} mx-auto px-6 py-24 w-full`}>
           <h2 className={`${isAboveMediumScreens ? 'text-6xl' : 'text-5xl'}  font-bold text-text-primary mb-8`}>TRAVEL & STAY</h2>
           <p className="text-xl text-text-primary">
+            What3words: ///gathers.unleashed.leaps
+            <br /><br />
             INFORMATION ON TRAVEL AND NEARBY ACCOMMODATION. THIS IS JUST A PLACEHOLDER FOR NOW
-          <br /><br />
-            What 3 words: ///gathers.unleashed.leaps
             </p>
         </div>
       </div>
@@ -150,7 +150,6 @@ const IntroPage = ({ selectedSection, setSelectedSection }: Props) => {useSectio
             <a href="mailto:jamesgeorgelay@gmail.com" className=" transition duration-300 hover:text-text-primary">
             jamesgeorgelay@gmail.com
             </a>
-            
           </p>
         </div>
       </div>

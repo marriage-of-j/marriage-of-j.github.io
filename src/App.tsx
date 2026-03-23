@@ -18,6 +18,9 @@ function App() {
           setSelectedSection={setSelectedSection}
         />
       )}
+            <footer className="bottom-0 w-full text-center py-2 text-xs text-text-primary bg-yellow">
+      Website designed & made by Jessica Shields
+      </footer>
     </div>
   );
 } 

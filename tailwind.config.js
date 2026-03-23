@@ -19,7 +19,7 @@ module.exports = {
     },
     fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
-        serif: ['Playfair Display', 'ui-serif'],
+        // serif: ['Playfair Display', 'ui-serif'],
         cursive: ['Monsieur La Doulaise', 'cursive'],
     },
     keyframes: {
